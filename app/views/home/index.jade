@@ -1,12 +1,28 @@
-head
-	link(rel="stylesheet",href="/css/materialize.css")
+doctype
+html(lang="ja")
+	head
+		meta(charset="utf-8")
+		link(rel="stylesheet",href="/css/materialize.css")
 
-h1= title
+	body
+		include ../parts/header
+		.containers
+			.row.teal.lighten-4
+				.col.s12.m4
+					.video-container
+						iframe( width="420",height="315",src="https://www.youtube.com/embed/knYD7YOKqwo",frameborder="0",allowfullscreen)
+			.row
+				.col.s12.m4
+					.center
+						h5 コメントを書こう！
+					input(type="email",id="comment")
+					button.btn.waves-effect.waves-light#btn Send
 
-input(id="name")
-button.btn#btn Send
+				.col.s12.m8
+					.comments
+							
 
-script(src="/js/jquery.js")
-script(src="/js/materialize.js")
-script(src="/socket.io/socket.io.js")
-script(src="/js/socket.js")
+					
+		include ../parts/footer
+		include ../parts/script
+		

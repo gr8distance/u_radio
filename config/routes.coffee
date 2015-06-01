@@ -6,7 +6,8 @@ module.exports =  [
 		path: "/",
 		func: (req,res)->
 			res.render("home/index",{
-				title: "Title!!!"
+				title: "Title!!!",
+				pretty: true
 			})
 	},
 	{

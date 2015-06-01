@@ -22,15 +22,16 @@ routes_of_get.forEach((r)->
 
 #####SocketIO Codes
 io.on("connection",(socket)->
-
-	socket.emit("news","Hello world")
-
-	socket.on("wait",(data)->
+	
+	socket.on("new",(data)->
 		puts data
-	)
+			
+		#io.sockets.emitで自分も含めたすべてに配信
+		io.sockets.emit("return_comment",data)
 
-	socket.on("send",(data)->
-		puts data
+		#socket.broadcast.emitで自分以外の全てに送信
+
+		#socket.emitは同一の名前を持つ相手になにかを送信
 	)
 )
 
